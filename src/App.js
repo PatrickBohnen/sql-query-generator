@@ -13,17 +13,22 @@ class App extends React.Component {
   resetSearch() {
     this.setState({searchResetCount: Math.random()});
   }
+
   generateQuery() {
     const queryConditions = document.getElementsByClassName('query-condition');
     let sqlResult = 'SELECT * FROM session<br />';
+
+    //Iterate through query conditions and construct sql
     for (let i = 0; i < queryConditions.length; i++) {
       let filterField = queryConditions[i].getElementsByClassName('filter-field')[0].value;
       let filterOperator = queryConditions[i].getElementsByClassName('filter-operator')[0].value;
       let singleInput;
+
       if (filterOperator !== 'between') {
         singleInput = queryConditions[i].getElementsByClassName('query-input')[0].value;
       }
 
+      //Start constructing SQL query
       if (i === 0) {
         sqlResult = sqlResult + 'WHERE ' + filterField;
       } else {

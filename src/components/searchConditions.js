@@ -35,6 +35,7 @@ function SearchConditions() {
         
     }
     
+    //Sets inline height on the search container to create transitions 
     function changeSearchContainerHeight(modifier) {
         const searchContainer = document.getElementsByClassName(searchContainerRandId)[0];
         let numOfConditions = queryBoxes.length;
@@ -45,9 +46,6 @@ function SearchConditions() {
         }
     }
 
-    // document.addEventListener("DOMContentLoaded", () => {
-    //     changeSearchContainerHeight(0)
-    // });
     return(
         <ul className={searchContainerRandId}>
             {queryBoxes.map((key) => (

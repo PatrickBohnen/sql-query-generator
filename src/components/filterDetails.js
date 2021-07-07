@@ -16,6 +16,7 @@ class FilterDetails extends React.Component {
         || this.state.filterField === 'screen_height'
         || this.state.filterField === 'visits' 
         || this.state.filterField === 'page_response';
+
         return(
             <form className={isInt ? 'intFilterForm' : 'stringFilterForm'}>
                 <select className='filter-field' name='filterField' onChange={this.updateFilterField}>
@@ -49,6 +50,7 @@ class IntegerConditions extends React.Component {
     render() {
         let isBetween = this.state.filterOperator === 'between';
         let isList = this.state.filterOperator === 'inList';
+
         return(
             <div className={isBetween ? 'is-between' : ''}>
                 <span className='staticText'>is</span>
@@ -66,7 +68,7 @@ class IntegerConditions extends React.Component {
                         <input className='int-ceiling' type='number' name='intCeiling' placeholder='0'></input>
                     </div>        
                 ) : (
-                    <input className='query-input' type={isList ? 'text' : 'number'} name='intSingle' placeholder={isList ? 'Comma seperated values...' : '0'}></input>
+                    <input className='query-input' type={isList ? 'text' : 'number'} name='intSingle' placeholder={isList ? 'Comma,Seperated,Values' : '0'}></input>
                 )}
             </div>
         );
@@ -97,6 +99,8 @@ class StringConditions extends React.Component {
             optionPlaceholder = 'Domain';
         } else if (this.props.filterField === 'path') {
             optionPlaceholder = 'Page Path';
+        } else {
+            optionPlaceholder = 'Search Value';
         }
 
         // checkFor
@@ -108,7 +112,7 @@ class StringConditions extends React.Component {
                     <option value='startsWith'>starts with</option>
                     <option value='inList'>in list</option>
                 </select>
-                <input className='query-input' type='text' name='stringSingle' placeholder={isList ? 'Comma seperated values...' : optionPlaceholder}></input>
+                <input className='query-input' type='text' name='stringSingle' placeholder={isList ? 'Comma,Seperated,Values' : optionPlaceholder}></input>
             </div>
         );
     } 

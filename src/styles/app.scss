@@ -1,12 +1,13 @@
 @import "destyle";
 
 body {
-    font-size: 14px;
-    font-family: Helvetica, Arial, sans-serif;
-    background: #fbfbfb;
     * {
         letter-spacing: 1.5px;
     }
+
+    background: #fbfbfb;
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 div.session-search-module {
@@ -67,16 +68,16 @@ div.session-search-module {
 
     @keyframes conditionAppear {
         0% {
+            height: 0;
             opacity: 0;
             padding: 0 16px;
-            height: 0;
         }
         33% {
             opacity: 0;
         }
         66% {
-            padding: 20px 16px;
             height: 72px;
+            padding: 20px 16px; 
         }
         100% {
             opacity: 1;
@@ -85,9 +86,9 @@ div.session-search-module {
     }
 
     button.remove-filter {
-        width: 14px;
         height: 14px;
         margin-right: 10px;
+        width: 14px;
         img {
             width: 100%;
         }
