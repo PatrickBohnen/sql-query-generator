@@ -1,0 +1,183 @@
+@import "destyle";
+
+body {
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    background: #fbfbfb;
+    * {
+        letter-spacing: 1.5px;
+    }
+}
+
+div.session-search-module {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: 36px auto;
+    max-width: 1000px;
+    width: 90vw;
+
+    div {
+        width: 100%;
+    }
+    h2 {
+        font-size: 1.5em;
+        font-weight: 500;
+        margin-bottom: 18px;
+    }
+    hr {
+        background: #e2e2e2;
+        border: none;
+        height: 1px;
+        width: 100%;
+    }
+    .qp-button {
+        border-radius: 4px;
+        color: white;
+        transition: all 350ms ease;
+    }
+
+    //Start styling for search conditions
+
+    ul {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 5000ms ease;
+        width: 100%;
+    }
+    li {
+        align-items: center;
+        animation: conditionAppear 5000ms;
+        background: white;
+        border: 1px solid #CACACA;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        padding: 20px 16px;
+        width: 100%;
+    }
+
+    @keyframes conditionAppear {
+        0% {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        100% {
+            opacity: 0;
+            trans
+        }
+    }
+
+    button.remove-filter {
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+        img {
+            width: 100%;
+        }
+    }
+    form {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    select, input, span.staticText {
+        border: 1px solid #AAA;
+        border-radius: 4px;
+        margin: 0 8px;
+        padding: 6px 10px;
+    }
+    select {
+        background: url('../icons/down-arrow.svg') calc(100% - 10px) 10px/10px 10px no-repeat;
+    }
+    span.staticText {
+        background: #e0e6ed;
+        padding: 6px 10px;
+    }
+    .intFilterForm {
+        .filter-field {
+            min-width: 232px;
+            width: 22%;
+        }
+        div {
+            display: flex;
+            flex-direction: row;
+            width: 78%;
+            select, input {
+                width: calc(50% - 35px);
+            }
+            &.is-between {
+                select {
+                    width: 25%;
+                }
+            }
+        }
+    }
+    .stringFilterForm {
+        .filter-field {
+            width: 33%; 
+        }
+        div {
+            display: flex;
+            flex-direction: row;
+            width: 66%;
+            select, input {
+                width: 50%;
+            }
+        }
+    }
+
+    button.and-button {
+        background: #23a7f0;
+        margin: 6px 0 64px;
+        padding: 8px 20px;
+        &:hover {
+            background: darken(#23a7f0, 8%);
+        }
+    }
+
+    //End styling for search filters, start syling for search results
+
+    div.button-container {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        margin: 20px 0 40px;
+    }
+    button.search-button {
+        align-items: center;
+        background: #23a7f0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-right: 30px;
+        padding: 12px 30px;
+        img {
+            margin-right: 12px;
+            width: 16px;
+        }
+        &:hover {
+            background: darken(#23a7f0, 8%);
+        }
+    }
+    button.reset-button {
+        background: #a9b5c6;
+        padding: 12px 22px;
+        &:hover {
+            background: darken(#a9b5c6, 8%);
+        }
+    }
+    p.sql-result {
+        background: white;
+        border: 1px solid #e2e2e2;
+        border-radius: 4px;
+        display: block;
+        padding: 16px 30px;
+        width: 100%;
+    }
+}   
+ 
